@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     public void SetTrajectory(Vector2 direction)
     {
         bullet.AddForce(direction * speed);
-        Destroy(gameObject, 10);
+        Destroy(gameObject, 5);
     }
 
     private void OnCollisionEnter2D()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4374900645935416203}
   - component: {fileID: 3862838338048263602}
   - component: {fileID: 2214480941948085544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Asteroids
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  m_UseAutoMass: 1
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
@@ -171,4 +171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7ac049ac5de26e4ab31b485e12b6b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites: []
+  sprites:
+  - {fileID: 21300000, guid: 87b9d8c255191c746975c8e54751d1ea, type: 3}
+  - {fileID: 21300000, guid: 4977fc9d9af81564aa4f5d6c2362dd18, type: 3}
+  - {fileID: 21300000, guid: 1f48518bcd8aae8468f1f4bac73831bf, type: 3}
+  - {fileID: 21300000, guid: a021d5f9696e09748bedad08649e956b, type: 3}
+  minSize: 1.2
+  size: 2.4
+  maxSize: 3.6
