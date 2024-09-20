@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D player;
+    public Bullet bulletPrefab;
     private bool thrusting;
     private bool reverse;
     private float turnDirection;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
-
+        Bullet bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        bullet.SetTrajectory(transform.up);
     }
 }
