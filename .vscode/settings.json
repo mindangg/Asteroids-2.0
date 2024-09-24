@@ -56,5 +56,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Asteroids 2.0.sln"
+    "dotnet.defaultSolution": "Asteroids 2.0.sln",
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 20
 }
