@@ -5,30 +5,26 @@ using UnityEngine;
 public class SpaceStation : MonoBehaviour
 {
     private Rigidbody2D spaceStation;
-    private Vector2 direction;
-    private Transform player;
     public Missiles missilesPrefab;
+    private float shootingDelay = 15; 
+    private float lastTimeShot = 0;
 
     private void Awake()
     {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-
-        Missiles missiles = Instantiate(missilesPrefab, transform.position, q);
+        Instantiate(missilesPrefab, transform.position, transform.rotation);
     }
-    // private void Update()
-    // {
-    //     if(true)
-    //     {
-    //         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
-    //         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
 
-    //         Missiles missiles = Instantiate(missilesPrefab, transform.position, q);
-    //     }
-    // }
+    private void Update()
+    {
+        if(Time.time > lastTimeShot + shootingDelay)
+        {
+            Instantiate(missilesPrefab, transform.position, transform.rotation);
+            lastTimeShot = Time.time;
+        }
+    }
 
     private void FixedUpdate()
     {
-        direction = (player.position - transform.position).normalized;
+
     }
 }

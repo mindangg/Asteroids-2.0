@@ -7,8 +7,8 @@ public class AsteroidsSpawn : MonoBehaviour
     public Asteroids asteroidsPrefab;
     private float spawnRate = 3;
     public int spawnAmmount = 1;
-    private float spawnDistance = 40;
-    private float trajectoryVariance = 35;
+    private float spawnDistance = 42;
+    private float trajectoryVariance = 36;
     
 
     private void Start()

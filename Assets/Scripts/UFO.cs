@@ -6,6 +6,7 @@ using UnityEngine;
 public class UFO : MonoBehaviour
 {
     private Rigidbody2D uFO;
+    private GameManager gameManager;
     private Vector2 direction;
     private float speed = 1.25f;
     private Transform player;
@@ -13,11 +14,13 @@ public class UFO : MonoBehaviour
     private float lazerSpeed = 250;
     private float shootingDelay = 1; 
     private float lastTimeShot = 0;
+    public bool UFOIsAlive;
 
     private void Awake()
     {
         uFO = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        gameManager = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<GameManager>();
     }
 
     private void Update()
@@ -37,5 +40,14 @@ public class UFO : MonoBehaviour
     {
         direction = (player.position - transform.position).normalized;
         uFO.MovePosition(uFO.position + direction * speed * Time.fixedDeltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Bullet")
+        {
+            gameManager.UFODestroy();
+            Destroy(gameObject);
+        }
     }
 }

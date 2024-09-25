@@ -14,10 +14,10 @@ public class Player : MonoBehaviour
     public float thrustPower = 10;
     public float turnSpeed = 0.5f;
     private bool isHyper = false;
-    private float screenTop = 19.2f;
-    private float screenBottom = -19.2f;
-    private float screenLeft = -32.9f;
-    private float screenRight = 32.9f;
+    private float screenTop = 21.1f;
+    private float screenBottom = -21.1f;
+    private float screenLeft = -36.7f;
+    private float screenRight = 36.7f;
 
     private void Awake()
     {
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         //Effect
-        transform.position = new Vector3(Random.Range(-31.18f, 31.18f), Random.Range(-16.9f, 16.9f), 0);
+        transform.position = new Vector3(Random.Range(-34f, 34f), Random.Range(-18f, 18f), 0);
         yield return new WaitForSeconds(0.5f);
         //Effect
         spriteRenderer.enabled = true;

@@ -179,7 +179,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 6}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!114 &2528667295119820151
 MonoBehaviour:
@@ -193,4 +193,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4755c1941b3126c468cab9ce45dd1912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missilesPrefab: {fileID: 0}
+  missilesPrefab: {fileID: 6809290085331285649, guid: 477fe37ec443e3d49981a829ab8a47b3, type: 3}

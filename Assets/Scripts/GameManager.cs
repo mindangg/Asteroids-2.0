@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,9 +16,37 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
+    public void SpaceStationDestroy(SpaceStation spaceStation)
+    {
+        score += 500;
+    }
+
+    public void MissilesDestroy(Missiles missiles)
+    {
+        score += 100;
+    }
+
+    public void UFODestroy()
+    {
+        score += 300;
+    }
+
     public void AsteroidsDestroy(Asteroids asteroids)
     {
+        //Explosion
 
+        if(asteroids.size < 1.4f)
+        {
+            score += 150;
+        }
+        else if(asteroids.size < 2.8f)
+        {
+            score += 100;
+        }
+        else
+        {
+            score += 50;
+        }
     }
 
     public void PlayerDied()
@@ -47,6 +77,6 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
