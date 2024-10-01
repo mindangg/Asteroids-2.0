@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class UFO : MonoBehaviour
@@ -14,7 +13,7 @@ public class UFO : MonoBehaviour
     private float lazerSpeed = 250;
     private float shootingDelay = 1; 
     private float lastTimeShot = 0;
-    public bool UFOIsAlive;
+    public bool UFOIsAlive = false;
 
     private void Awake()
     {
@@ -48,6 +47,7 @@ public class UFO : MonoBehaviour
         {
             gameManager.UFODestroy();
             Destroy(gameObject);
+            UFOIsAlive = false;
         }
     }
 }

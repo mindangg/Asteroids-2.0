@@ -8,6 +8,7 @@ public class SpaceStation : MonoBehaviour
     public Missiles missilesPrefab;
     private float shootingDelay = 15; 
     private float lastTimeShot = 0;
+    public bool stationIsAlive = false;
 
     private void Awake()
     {
